@@ -1,0 +1,83 @@
+.review-form-container {
+  width: 820px;
+  height: 536px;
+  background: #fcfcfc;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  text-align: left;
+  padding: 20px;
+}
+
+.information {
+  display: flex;
+  flex: 2;
+}
+
+.column {
+  flex-grow: 1;
+}
+
+.label {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #637381;
+}
+
+.content {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+input {
+  background: #ffffff;
+  /* Colors/grey_border */
+
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  height: 36px;
+  width: 100%;
+  padding: 8px;
+}
+
+textarea {
+  width: 98%;
+  height: 20vh;
+  padding: 8px;
+}
+
+::placeholder {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #c4cdd5;
+}
+
+.button {
+  background: linear-gradient(90deg, #396afc 0%, #2948ff 100%);
+  border-radius: 8px;
+  margin-top: 28px;
+  padding: 8px 40px;
+  box-shadow: 0;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #ffffff;
+  border: 2px solid #396afc;
+}
