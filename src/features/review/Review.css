@@ -105,25 +105,21 @@
   border: 2px solid #cde4ff;
 }
 
-.button-reload {
-  background: linear-gradient(90deg, #396afc 0%, #2948ff 100%);
-  border-radius: 8px;
-  margin-top: 28px;
-  padding: 8px 40px;
-  box-shadow: 0;
+.pagination {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  color: #ffffff;
-  border: 2px solid #396afc;
-
+.footer {
   position: fixed;
-  top: 95%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -100px;
+}
+
+.pageClassName {
+  display: inline-block;
+}
+
+.paginate {
+  display: flex;
+  justify-content: center;
 }
