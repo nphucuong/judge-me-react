@@ -1,0 +1,129 @@
+.container {
+  display: block;
+  padding: 56px;
+}
+
+.review-form-wrapper {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-container {
+  display: flow-root;
+}
+
+.filter {
+  float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.label {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #637381;
+  margin-right: 8px;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+
+.product:nth-child(even) {
+  background-color: #fcfcfc;
+}
+
+.product-info {
+  max-width: 200px;
+  margin-right: 32px;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+}
+
+.image-name {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #333333;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 15px;
+}
+
+.content {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+}
+
+.review-created-at {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #637381;
+  margin-left: 15px;
+}
+
+.button-new {
+  display: block;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+
+  background: #cde4ff;
+  border-radius: 8px;
+  margin-top: 28px;
+  padding: 8px 20px;
+  box-shadow: 0;
+  color: #4b71ca;
+  text-align: center;
+  border: 2px solid #cde4ff;
+}
+
+.button-reload {
+  background: linear-gradient(90deg, #396afc 0%, #2948ff 100%);
+  border-radius: 8px;
+  margin-top: 28px;
+  padding: 8px 40px;
+  box-shadow: 0;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #ffffff;
+  border: 2px solid #396afc;
+
+  position: fixed;
+  top: 95%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+}
