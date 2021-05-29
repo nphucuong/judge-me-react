@@ -4,7 +4,7 @@ import { get } from 'lodash'
 export const DEFAULT_TIMEOUT = 10 * 1000
 
 const buildRequestConfig = async (config: any) => {
-  config.baseURL = 'http://localhost:3001/'
+  config.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:3001/'
 
   return { ...config }
 }
