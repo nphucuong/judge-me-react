@@ -186,7 +186,9 @@ const Review: React.FC<{}> = () => {
           {products.map((product) => (
             <div className="product">
               <div className="product-info">
-                <img src={productImg} className="image" alt="Product" />
+                <div className="avatar-container">
+                  <div class="avatar">{product.title.charAt(0)}</div>
+                </div>
                 <div className="image-name">{product.title}</div>
                 <Link
                   to={`products/${product.id}/new-review`}
