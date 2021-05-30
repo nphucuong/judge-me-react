@@ -18,19 +18,11 @@
 }
 
 .label {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
   line-height: 20px;
   color: #637381;
 }
 
 .content {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
   line-height: 20px;
   color: #333333;
 }
@@ -57,10 +49,6 @@ textarea {
 }
 
 ::placeholder {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
   line-height: 20px;
   color: #c4cdd5;
 }
@@ -71,7 +59,6 @@ textarea {
   margin-top: 28px;
   padding: 8px 40px;
   box-shadow: 0;
-
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
