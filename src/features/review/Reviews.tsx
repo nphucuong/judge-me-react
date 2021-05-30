@@ -1,7 +1,8 @@
 // @ts-nocheck
 
 import React, { useState, useEffect } from "react";
-import { get, map, find } from "lodash";
+import { get, map, find, isEmpty, clone } from "lodash";
+import moment from "moment";
 
 import "./Review.css";
 import Dropdown from "react-dropdown";
@@ -62,20 +63,9 @@ const Review: React.FC<{}> = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await request.get("shops");
-      const shops = get(result, "data.records");
+      const shops = get(result, "data");
       const shopsDropdown = shops.map((shop) => {
         return { label: shop.name, value: shop.id };
-      });
-
-      const products = await getProducts(shopsDropdown[0]);
-      const productIds = map(products, "id");
-      const reviews = await getReviews(productIds);
-
-      products.map((product) => {
-        const reviewProduct = find(reviews, ["product.id", product.id]);
-        const productReviews = reviewProduct.reviews;
-        product["reviews"] = productReviews;
-        return product;
       });
 
       setShops(shopsDropdown);
@@ -86,6 +76,56 @@ const Review: React.FC<{}> = () => {
   }, []);
 
   let match = useRouteMatch();
+
+  const formatReviewTime = (reviewCreatedAt) => {
+    const duration = moment(reviewCreatedAt).diff(moment(), "hours");
+    return moment.duration(duration, "hours").humanize(true);
+  };
+
+  const renderReviews = (product) => {
+    if (product.reviews.length === 0)
+      return <div className="no-review">No Review</div>;
+
+    return (
+      <div>
+        {product.reviews.map((review) => (
+          <div>
+            <div className="reviewer-info">
+              <img className="reviewer-img"></img>
+              <div className="reviewer-name">{review.reviewer_name}</div>
+            </div>
+            <div className="rating">
+              <ReactStars
+                count={5}
+                value={review.rating}
+                size={24}
+                activeColor="#ffd700"
+              />
+              <div className="review-created-at">
+                {formatReviewTime(review.created_at)}
+              </div>
+            </div>
+            <div className="review-content">{review.body}</div>
+          </div>
+        ))}
+        <ReactPaginate
+          previousLabel={"<"}
+          nextLabel={">"}
+          breakLabel={"..."}
+          breakClassName={"break-me"}
+          pageCount={Math.ceil(product.totalReviews / REVIEW_PER_PAGE)}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={(selected) =>
+            handleReviewPageClick({ productId: product.id, selected })
+          }
+          containerClassName={"pagination"}
+          activeClassName={"active"}
+          pageClassName={"pageClassName"}
+        />
+      </div>
+    );
+  };
 
   return (
     <Switch>
@@ -120,28 +160,7 @@ const Review: React.FC<{}> = () => {
                   New Review
                 </Link>
               </div>
-              <div className="review">
-                {product.reviews.map((review) => (
-                  <div>
-                    <div className="reviewer-info">
-                      <img className="reviewer-img"></img>
-                      <div className="reviewer-name">
-                        {review.reviewer_name}
-                      </div>
-                    </div>
-                    <div className="rating">
-                      <ReactStars
-                        count={5}
-                        value={review.rating}
-                        size={24}
-                        activeColor="#ffd700"
-                      />
-                      <div className="review-created-at">1 month ago</div>
-                    </div>
-                    <div className="content">{review.body}</div>
-                  </div>
-                ))}
-              </div>
+              <div className="review">{renderReviews(product)}</div>
             </div>
           ))}
           <button className="button-reload" onClick={reload}>
