@@ -22,10 +22,6 @@
 }
 
 .label {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
   line-height: 20px;
   color: #637381;
   margin-right: 8px;
@@ -52,8 +48,6 @@
 }
 
 .image-name {
-  font-family: Lato;
-  font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
@@ -68,20 +62,15 @@
   margin-bottom: 15px;
 }
 
-.content {
+.review-content {
   font-family: Lato;
   font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
   line-height: 20px;
   color: #333333;
 }
 
 .review-created-at {
-  font-family: Lato;
-  font-style: normal;
   font-weight: 500;
-  font-size: 14px;
   line-height: 20px;
   color: #637381;
   margin-left: 15px;
@@ -89,10 +78,7 @@
 
 .button-new {
   display: block;
-  font-family: Lato;
-  font-style: normal;
   font-weight: bold;
-  font-size: 14px;
   line-height: 20px;
 
   background: #cde4ff;
@@ -107,12 +93,6 @@
 
 .pagination {
   display: inline-block;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.footer {
-  position: fixed;
 }
 
 .pageClassName {
@@ -122,4 +102,20 @@
 .paginate {
   display: flex;
   justify-content: center;
+}
+
+.no-review {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.review {
+  display: flex;
+}
+
+.reviewer-name {
+  color: #333333;
+  font-weight: normal;
 }
